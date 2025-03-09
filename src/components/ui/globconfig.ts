@@ -1,6 +1,6 @@
   import dynamic from "next/dynamic";
   
-  const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
+  export const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
   ssr: false,
 });
   export const globeConfig = {

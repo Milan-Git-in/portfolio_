@@ -1,5 +1,5 @@
 "use client";
-
+import type {JSX} from "react";
 import { cn } from "@/lib/utils";
 
 import React, {
@@ -95,8 +95,8 @@ export const CardBody = ({
   );
 };
 
-export const CardItem = ({
-  as: Tag = "div",
+export const CardItem = <T extends keyof JSX.IntrinsicElements | React.ComponentType<any>>({
+  as,
   children,
   className,
   translateX = 0,
@@ -107,7 +107,7 @@ export const CardItem = ({
   rotateZ = 0,
   ...rest
 }: {
-  as?: React.ElementType;
+  as?: T;
   children: React.ReactNode;
   className?: string;
   translateX?: number | string;
@@ -116,9 +116,8 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
+} & React.ComponentPropsWithoutRef<T>) => {
+  const ref = useRef<HTMLElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
@@ -134,14 +133,16 @@ export const CardItem = ({
     }
   };
 
+  const Component = as || "div"; // Default to "div" if `as` is undefined
+
   return (
-    <Tag
+    <Component
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}
       {...rest}
     >
       {children}
-    </Tag>
+    </Component>
   );
 };
 

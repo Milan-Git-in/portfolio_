@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import Device from './Device'
 import Image from 'next/image'
