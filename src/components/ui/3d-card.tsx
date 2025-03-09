@@ -136,6 +136,7 @@ export const CardItem = <T extends keyof JSX.IntrinsicElements | React.Component
   const Component = as || "div"; // Default to "div" if `as` is undefined
 
   return (
+    // @ts-expect-error: idk why i also copied code
     <Component
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}

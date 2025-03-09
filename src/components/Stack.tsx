@@ -2,7 +2,7 @@
 import React from 'react'
 import Device from './Device'
 import Image from 'next/image'
-import Time from './Time'
+import {Time} from './Time'
 
 
 const Stack = () => {
