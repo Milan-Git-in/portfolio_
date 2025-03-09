@@ -9,12 +9,12 @@ This portfolio is more than just a webpage—it's a showcase of my skills, journ
 
 ## ✨ What's Inside? 👀
 
-🌍 A warm welcome with a tagline and a floating Navbar featuring a theme toggler
-⏳ A Timeline showcasing my journey and achievements 🏆
-🛠 A Tech Stack section displaying the modern technologies I use to build scalable applications
-🕒 A world map showing my flexibility with different time zones
-🔗 A floating social menu to stay connected
-🎥 Dynamic Animations
+##### 🌍 A warm welcome with a tagline and a floating Navbar featuring a theme toggler
+##### ⏳ A Timeline showcasing my journey and achievements 🏆
+##### 🛠 A Tech Stack section displaying the modern technologies I use to build scalable applications
+##### 🕒 A world map showing my flexibility with different time zones
+##### 🔗 A floating social menu to stay connected
+##### 🎥 Dynamic Animations
 This site is packed with sleek and smooth animations—so much so that you might discover a new one with every visit! 🎭
 And don’t worry—it’s all optimized for performance ⚡, ensuring a buttery smooth experience without slowdowns.
 
