@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef , useEffect , useState } from "react";
 import { motion } from "motion/react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
@@ -22,7 +22,13 @@ export default function WorldMap({
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
   const { theme } = useTheme();
-  if( theme === undefined) return null;
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
+  useEffect(() => {
+    if(theme !== undefined){
+      setIsThemeLoaded(true);
+    }
+  },[theme])
+  if(!isThemeLoaded) return <div>Checking my Avaliablity....</div>;
   const svgMap = map.getSVG({
     radius: 0.22,
     color: theme === "dark" ? "#FFFFFF40" : "#00000040",
