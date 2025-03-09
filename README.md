@@ -1,6 +1,5 @@
 # 🌟 Welcome to My Portfolio 👋
-<div style="display: flex; align-items: center; gap: 20px;"> <img src="assets/HomePage.png" width="70%" alt="Portfolio Home Page Preview"> <div style="display: flex; flex-direction: column; gap: 10px;"> <img src="assets/Journey.png" width="100%" alt="Journey Section"> <img src="assets/Technologies.png" width="100%" alt="Technologies Used"> </div> </div>
-
+<img src="assets/HomePage.png"  alt="Portfolio Home Page Preview">   <img src="assets/Technologies.png" alt="Technologies Used"> </div>
 ## 🚀 About This Portfolio
 This portfolio is more than just a webpage—it's a showcase of my skills, journey, and passion for web development. Built with:
 
