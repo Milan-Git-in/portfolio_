@@ -39,7 +39,7 @@ const items  = [
 	},
 	{	
 		name:"Next",
-		src : "/Next.svg"
+		src : "/Next-15.svg"
 	},
 	{	name:"React",
 		src : "/JS.svg"
