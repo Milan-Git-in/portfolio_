@@ -1,26 +1,22 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { World } from './ui/globe'; // Your dynamically imported 3D Globe component
+import React, { Suspense, useMemo } from "react";
 import { globeConfig, sampleArcs } from './ui/globconfig';
 
+// Dynamically import the World component
+const World = React.lazy(() => import('./ui/globe').then(module => ({ default: module.World })));
+
 const Time = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Only set to true once the component has mounted in the browser
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    // Render nothing or a fallback loading state before the component mounts
-    return null;
-  }
+  // Use useMemo to avoid unnecessaray re-renders of the World component
+  const memoizedWorld = useMemo(() => <World data={sampleArcs} globeConfig={globeConfig} />, [sampleArcs, globeConfig]);
 
   return (
     <div className="flex flex-col items-center justify-center">
       <p className="text-xl word-wrap w-full">I am Very flexible when it comes to timezones!</p>
       <div className="h-[260px] w-full">
-        <World data={sampleArcs} globeConfig={globeConfig} />
+        {/* Suspense component handles loading state while the World is being lazy-loaded */}
+        <Suspense fallback={<div>Checking for Availability....</div>}>
+          {memoizedWorld}
+        </Suspense>
       </div>
     </div>
   );
